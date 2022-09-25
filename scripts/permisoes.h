@@ -1,0 +1,3 @@
+struct Permisoes {
+	int modificarHorarios;	
+};
