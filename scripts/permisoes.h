@@ -1,3 +1,0 @@
-struct Permisoes {
-	int modificarHorarios;	
-};
