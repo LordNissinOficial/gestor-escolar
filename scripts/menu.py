@@ -33,7 +33,9 @@ class MenuTeste(Menu):
 	def __init__(self, gestorEscolar):
 		Menu.__init__(self, gestorEscolar)
 		self.botoes = BotaoLayout(1, 1)
+		self.botoes.horizontal = True
 		self.botoes.addBotao("entrar", self.entrar)
+		
 		self.botoes.addBotao("registrar", self.entrar)
 		self.botoes.addBotao("logar", self.entrar)
 		self.botoes.addBotao("sair", self.gestorEscolar.sair)
@@ -60,4 +62,11 @@ class MenuTeste2(Menu):
 		
 	def show(self, tela):
 		self.showOpcoes(tela)
-		
+
+def MenuInicial(Menu):
+	def __init__(self, gestorEscolar):
+		Menu.__init__(self, gestorEscolar)
+		self.botoes = []
+		self.widgets = [self.botoes]
+		self.botoes.addBotao("logar")
+		self.botoes.addBotao("sair")
