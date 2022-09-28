@@ -1,14 +1,14 @@
 import curses
-from scripts.menu import MenuTeste
+from scripts.menu import MenuInicial
 
 class GestorEscolar:
 	def __init__(self, tela):
 		self.tela = tela
 		self.rodando = True
-		self.menu = MenuTeste(self)
-		self.menu.opcoes = ["entrar", "sair"]
+		self.menu = MenuInicial(self)
 	
 	def novoMenu(self, menu):
+		#print(str(menu))
 		self.menu = menu(self)
 		self.tela.clear()
 		
@@ -17,10 +17,8 @@ class GestorEscolar:
 		
 	def lidarInput(self):
 		key = self.tela.getch()
-		if key==ord("q"):
-			self.sair()
-		else:#key in [curses.KEY_DOWN, curses.KEY_UP, curses.KEY_ENTER, 10]:
-			self.menu.lidarInput(key)
+
+		self.menu.lidarInput(key)
 				
 	def show(self):
 		self.menu.show(self.tela)
