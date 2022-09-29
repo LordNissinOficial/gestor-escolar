@@ -1,7 +1,7 @@
 import curses 
 
 class Botao():
-	def __init__(self, x, y, label, funcao):
+	def __init__(self, x, y, label, funcao=None):
 		self.funcao = funcao
 		self.label = label
 		self.x = x
